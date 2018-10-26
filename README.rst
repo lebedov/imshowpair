@@ -6,7 +6,8 @@ Compare Two Images with Matplotlib
 Package Description
 -------------------
 Utility function for comparing two images. Inspired by MATLAB's
-`imshowpair <https://www.mathworks.com/help/images/ref/imshowpair.html>` function.
+`imshowpair <https://www.mathworks.com/help/images/ref/imshowpair.html>`_ 
+function.
 
 .. .. image:: https://img.shields.io/pypi/v/imshowpair.svg
 ..    :target: https://pypi.python.org/pypi/imshowpair
