@@ -8,28 +8,23 @@ Package Description
 Utility function for comparing two images. Inspired by MATLAB's
 `imshowpair <https://www.mathworks.com/help/images/ref/imshowpair.html>` function.
 
-.. image:: https://img.shields.io/pypi/v/imshowpair.svg
-    :target: https://pypi.python.org/pypi/imshowpair
-    :alt: Latest Version
+.. .. image:: https://img.shields.io/pypi/v/imshowpair.svg
+..    :target: https://pypi.python.org/pypi/imshowpair
+..    :alt: Latest Version
 
 Installation
 ------------
-imshowpair requires matplotlib. If you 
-have `pip <http://www.pip-installer.org/>`_ installed on your
-system, run ::
-
-    pip install imshowpair
-
-to install the package and all dependencies. You can also download 
-the source tarball, unpack it, and run ::
+`imshowpair` requires matplotlib. To install, download the source and run ::
 
     python setup.py install
 
-from within the source directory.
-
 Usage
 -----
-To be written.
+
+    import imshowpair
+    a = .. # load first image
+    b = .. # load second image
+    imshowpair.imshowpair(a, b)
 
 Development
 -----------
