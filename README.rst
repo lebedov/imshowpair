@@ -21,7 +21,8 @@ Installation
 
 Usage
 -----
-::
+Sample usage: ::
+
     import imshowpair
     a = .. # load first image
     b = .. # load second image
