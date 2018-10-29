@@ -12,7 +12,7 @@ def blend(a, b, cmap=plt.cm.gray, alpha=0.5, interpolation='nearest'):
     raise NotImplementedError
 
 def imshowpair(a, b, method=None, show_all=True, axes_visible=False, cmap=None,
-            *args, **kwargs):
+               interpolation=None, grid=False, *args, **kwargs):
     """
     Compare images.
 
@@ -31,11 +31,17 @@ def imshowpair(a, b, method=None, show_all=True, axes_visible=False, cmap=None,
         Show axes if True.
     cmap : matplotlib.colors.Colormap
         Color map to use when displaying images.
+    interpolation : str
+        Interpolation method for `imshow` to use.
+    grid : bool
+        If True, display grid.
     """
 
-    def int_axes(ax, shape):
-        ax.axes.set_xticks(np.arange(shape[1], dtype=int))
-        ax.axes.set_yticks(np.arange(shape[0], dtype=int))
+    def turn_off_ticks(ax):
+        for tic in ax.xaxis.get_major_ticks():
+            tic.tick1On = tic.tick2On = False
+        for tic in ax.yaxis.get_major_ticks():
+            tic.tick1On = tic.tick2On = False
 
     a = np.asarray(a)
     b = np.asarray(b)
@@ -45,14 +51,16 @@ def imshowpair(a, b, method=None, show_all=True, axes_visible=False, cmap=None,
     ax_list = []
     if method == None:
         ax0 = ax = plt.subplot(121)
-        plt.imshow(a, origin='upper', cmap=cmap)
-        int_axes(ax, a_shape)
+        plt.imshow(a, origin='upper', cmap=cmap, interpolation=interpolation)
+        plt.grid(grid)
+        turn_off_ticks(ax)
         ax_list.append(ax)
         ax = plt.subplot(122, sharex=ax0, sharey=ax0)
-        plt.imshow(b, origin='upper', cmap=cmap)
-        int_axes(ax, b_shape)
+        plt.imshow(b, origin='upper', cmap=cmap, interpolation=interpolation)
+        plt.grid(grid)
+        turn_off_ticks(ax)
         if a_shape == b_shape:
-            ax.axes.yaxis.set_visible(False)
+            ax.set_yticklabels([])
         ax_list.append(ax)
         plt.subplots_adjust()
     elif callable(method):
@@ -60,32 +68,38 @@ def imshowpair(a, b, method=None, show_all=True, axes_visible=False, cmap=None,
         c_shape = c.shape
         if show_all:
             ax0 = ax = plt.subplot(131)
-            plt.imshow(a, origin='upper', cmap=cmap)
-            int_axes(ax, a_shape)
+            plt.imshow(a, origin='upper', cmap=cmap, interpolation=interpolation)
+            plt.grid(grid)
+            turn_off_ticks(ax)
             ax_list.append(ax)
             ax = plt.subplot(132, sharex=ax0, sharey=ax0)
-            plt.imshow(b, origin='upper', cmap=cmap)
-            int_axes(ax, b_shape)
+            plt.imshow(b, origin='upper', cmap=cmap, interpolation=interpolation)
+            plt.grid(grid)
+            turn_off_ticks(ax)
             if a_shape == b_shape:
-                ax.axes.yaxis.set_visible(False)
+                ax.set_yticklabels([])
             ax_list.append(ax)
             ax = plt.subplot(133, sharex=ax0, sharey=ax0)
-            plt.imshow(c, origin='upper', cmap=cmap)
-            int_axes(ax, c_shape)
+            plt.imshow(c, origin='upper', cmap=cmap, interpolation=interpolation)
+            plt.grid(grid)
+            turn_off_ticks(ax)
+            # int_axes(ax, c_shape)
             plt.subplots_adjust()
             if c_shape == b_shape:
-                ax.axes.yaxis.set_visible(False)
+                # ax.axes.yaxis.set_visible(False)
+                ax.set_yticklabels([])
             ax_list.append(ax)
         else:
-            plt.imshow(c, origin='upper', cmap=cmap)
-            int_axes(ax, c_shape)
+            ax = plt.subplot(111)
+            plt.imshow(c, origin='upper', cmap=cmap, interpolation=interpolation)
+            plt.grid(grid)           
+            turn_off_ticks(ax)
             if c_shape == b_shape:
-                ax.axes.yaxis.set_visible(False)
+                ax.set_yticklabels([])
             ax_list.append(ax)
     else:
         NotImplementedError
     if not axes_visible:
         for ax in ax_list:
-            ax.axes.xaxis.set_visible(False)
-            ax.axes.yaxis.set_visible(False)
-
+            ax.set_xticklabels([])
+            ax.set_yticklabels([])
