@@ -83,10 +83,8 @@ def imshowpair(a, b, method=None, show_all=True, axes_visible=False, cmap=None,
             plt.imshow(c, origin='upper', cmap=cmap, interpolation=interpolation)
             plt.grid(grid)
             turn_off_ticks(ax)
-            # int_axes(ax, c_shape)
             plt.subplots_adjust()
             if c_shape == b_shape:
-                # ax.axes.yaxis.set_visible(False)
                 ax.set_yticklabels([])
             ax_list.append(ax)
         else:
