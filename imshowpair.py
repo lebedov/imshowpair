@@ -8,9 +8,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def blend(a, b, cmap=plt.cm.gray, alpha=0.5, interpolation='nearest'):
-    raise NotImplementedError
-
 def imshowpair(a, b, method=None, show_all=True, axes_visible=False, cmap=None,
                interpolation=None, grid=False, *args, **kwargs):
     """

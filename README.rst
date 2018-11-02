@@ -15,7 +15,8 @@ function.
 
 Installation
 ------------
-`imshowpair` requires matplotlib. To install, download the source and run ::
+`imshowpair` requires `matplotlib <https://matplotlib.org>`_. To install, 
+download the source and run ::
 
     python setup.py install
 
@@ -27,6 +28,16 @@ Sample usage: ::
     a = .. # load first image
     b = .. # load second image
     imshowpair.imshowpair(a, b)
+
+Several useful functions to use when comparing images (alpha blending, etc.) are 
+implemented in `imshowpair.utils`. These may require additional dependencies 
+such as `scikit-image <https://scikit-image.org>`_: ::
+
+    import imshowpair
+    import imshowpair.utils as utils
+    a = .. # load first image
+    b = .. # load second image
+    imshowpair.imshowpair(a, b, utils.blend)
 
 Development
 -----------

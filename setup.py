@@ -47,5 +47,6 @@ if __name__ == "__main__":
         long_description = LONG_DESCRIPTION,
         url = URL,
         py_modules = ['imshowpair'],
-        install_requires = ['matplotlib>=2.0.0']
+        install_requires = ['matplotlib>=2.0.0'],
+        extras_require = {'extra_funcs': ['scikit-image>=0.14']}
         )
