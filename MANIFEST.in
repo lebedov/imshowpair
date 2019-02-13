@@ -1,0 +1,4 @@
+include *.rst
+include *.py
+include Makefile
+exclude MANIFEST.in

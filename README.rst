@@ -29,7 +29,7 @@ Sample usage: ::
     b = .. # load second image
     imshowpair.imshowpair(a, b)
 
-Several useful functions to use when comparing images (alpha blending, etc.) are 
+Functions to use when comparing images (alpha blending, etc.) are 
 implemented in `imshowpair.utils`. These may require additional dependencies 
 such as `scikit-image <https://scikit-image.org>`_: ::
 
