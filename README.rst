@@ -29,15 +29,17 @@ Sample usage: ::
     b = .. # load second image
     imshowpair.imshowpair(a, b)
 
-Functions to use when comparing images (alpha blending, etc.) are 
-implemented in `imshowpair.utils`. These may require additional dependencies 
-such as `scikit-image <https://scikit-image.org>`_: ::
+If one specifies an image comparison function of two arguments as the
+`method` parameter, `imshowpair` will display its output alongside the
+original images. Several such functions (alpha blending, etc.) are
+implemented in `imshowpair.utils`. These may require additional
+dependencies such as `scikit-image <https://scikit-image.org>`_: ::
 
     import imshowpair
     import imshowpair.utils as utils
     a = .. # load first image
     b = .. # load second image
-    imshowpair.imshowpair(a, b, utils.blend)
+    imshowpair.imshowpair(a, b, method=utils.blend)
 
 Development
 -----------
