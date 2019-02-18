@@ -15,7 +15,7 @@ function.
 
 Installation
 ------------
-`imshowpair` requires `matplotlib <https://matplotlib.org>`_. To install, 
+imshowpair requires `matplotlib <https://matplotlib.org>`_. To install, 
 download the source and run ::
 
     python setup.py install
@@ -30,9 +30,9 @@ Sample usage: ::
     imshowpair.imshowpair(a, b)
 
 If one specifies an image comparison function of two arguments as the
-`method` parameter, `imshowpair` will display its output alongside the
+``method`` parameter, imshowpair will display its output alongside the
 original images. Several such functions (alpha blending, etc.) are
-implemented in `imshowpair.utils`. These may require additional
+implemented in ``imshowpair.utils``. These may require additional
 dependencies such as `scikit-image <https://scikit-image.org>`_: ::
 
     import imshowpair
