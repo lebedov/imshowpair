@@ -1,10 +1,10 @@
 .. -*- rst -*-
 
-Compare Two Images with Matplotlib
-==================================
-
 .. image:: https://raw.githubusercontent.com/lebedov/imshowpair/master/imshowpair.png
     :alt: imshowpair
+
+Compare Two Images with Matplotlib
+==================================
 
 Package Description
 -------------------
