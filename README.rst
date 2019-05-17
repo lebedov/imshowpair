@@ -3,9 +3,6 @@
 .. image:: https://raw.githubusercontent.com/lebedov/imshowpair/master/imshowpair.png
     :alt: imshowpair
 
-Compare Two Images with Matplotlib
-==================================
-
 Package Description
 -------------------
 Utility function for comparing two images. Inspired by MATLAB's
