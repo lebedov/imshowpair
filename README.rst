@@ -3,15 +3,18 @@
 Compare Two Images with Matplotlib
 ==================================
 
+.. image:: https://raw.githubusercontent.com/lebedov/imshowpair/master/imshowpair.png
+    :alt: imshowpair
+
 Package Description
 -------------------
 Utility function for comparing two images. Inspired by MATLAB's
 `imshowpair <https://www.mathworks.com/help/images/ref/imshowpair.html>`_ 
 function.
 
-.. .. image:: https://img.shields.io/pypi/v/imshowpair.svg
-..    :target: https://pypi.python.org/pypi/imshowpair
-..    :alt: Latest Version
+.. image:: https://img.shields.io/pypi/v/imshowpair.svg
+    :target: https://pypi.python.org/pypi/imshowpair
+    :alt: Latest Version
 
 Installation
 ------------
